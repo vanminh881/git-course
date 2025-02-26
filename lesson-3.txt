@@ -4,15 +4,22 @@
 + Gõ i -> vào chế độ insert
 + Gõ esc để thoát insert
 + Gõ “"wq" -> write and quit
+bài sửa: vào giao diện thay đổi message của commit gần nhất
 - git commit --amend -m"message": thay đổi commit message
+bài sửa: thay đổi message của commit gần nhất trực tiếp mà không cần vào giao diện
 - git restore --staged <file>: Đưa <file> từ vùng staging về working directory
-- git reset HEAD~1: Đưa 1 commit từ vùng repository về working directory (uncommit)
+- git reset HEAD~1: Đưa tất cả các file changes của 1 commit từ vùng repository về working directory (uncommit)
+
+bài sửa: cả git commit --amend và git commit --amend -m"message" => 2 câu lệnh này để thay đổi commit msg gần nhất
 
 2. Hãy tưởng tượng có 1 folder lesson-3 mới được tạo. Hãy liệt kê các file theo từng vùng, liệt kê các commit và message tương ứng sau khi thao tác một loạt các lệnh sau
 (sẽ rất tuyệt vời nếu bạn không chạy trên máy tính thật, mà bạn chạy trong đầu, sẽ giúp bạn hiểu về Git rõ ràng hơn):
 
 a. Tạo 3 file: file1, file2, file3
 b. Chạy lệnh: git init
+    - Working directory: file1, file2, file3
+    - Staging:
+    - Repository:
 c. Chạy lệnh: git commit -m”init project”
     - Working directory: file1, file2, file3
     - Staging:
@@ -48,6 +55,24 @@ b. Tạo file file1.txt, file2.txt, oops/file3.txt
 c. Thêm file .gitignore, thêm vào 2 dòng:
 i. file1.txt
 ii. oops/
+----
+a. Chạy lệnh git init
+- Khởi tạo git Repository "lesson-3-git"
+    - Working directory:
+    - Staging:
+    - Repository:
+b. Tạo file file1.txt, file2.txt, oops/file3.txt
+Những file mới được tạo nằm trong vùng working directory
+    - Working directory: file1.txt, file2.txt, oops/file3.txt
+    - Staging:
+    - Repository:
+c. Thêm file .gitignore, thêm vào 2 dòng:
+i. file1.txt
+ii. oops/
+    - Working directory: file1.txt, file2.txt, oops/file3.txt (Sau khi add 2 file file1.txt và file3 vào git ignore, thì 2 file này không thuộc quyền quản lý của git nữa => không xuất hiện ở working directory
+file .gitignore vẫn thuộc quyền quản lý bởi git, vẫn xuất hiện ở các vùng của git như bình thường )
+    - Staging:
+    - Repository:
 d. Chạy lệnh: git add .
     - Working directory: file1.txt, oops/file3.txt
     - Staging: file2.txt
